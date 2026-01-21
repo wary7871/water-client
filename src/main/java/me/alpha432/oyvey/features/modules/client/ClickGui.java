@@ -10,9 +10,9 @@ import me.alpha432.oyvey.features.settings.Setting;
 import net.minecraft.util.Formatting;
 import org.lwjgl.glfw.GLFW;
 
-public class waterclient
+public class ClickGui
         extends Module {
-    private static waterclient INSTANCE = new waterclient();
+    private static ClickGui INSTANCE = new ClickGui();
     public Setting<String> prefix = str("Prefix", ".");
     public Setting<Integer> red = num("Red", 0, 0, 255);
     public Setting<Integer> green = num("Green", 0, 0, 255);
@@ -28,8 +28,8 @@ public class waterclient
     public Setting<Float> rainbowSaturation = num("Saturation", 150.0f, 1.0f, 255.0f);
     private OyVeyGui click;
 
-    public waterclient() {
-        super("water client", "Opens the waterclient", Module.Category.CLIENT, true, false, false);
+    public ClickGui() {
+        super("ClickGui", "Opens the ClickGui", Module.Category.CLIENT, true, false, false);
         setBind(GLFW.GLFW_KEY_RIGHT_SHIFT);
         rainbowHue.setVisibility(v -> rainbow.getValue());
         rainbowBrightness.setVisibility(v -> rainbow.getValue());
@@ -37,7 +37,7 @@ public class waterclient
         this.setInstance();
     }
 
-    public static waterclient getInstance() {
+    public static ClickGui getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new waterclient();
         }
